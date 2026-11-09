@@ -1,0 +1,192 @@
+.my-plan-container {
+  background: #0e1015;
+  color: white;
+  min-height: 100vh;
+  padding: 35px;
+}
+
+/* Heading */
+
+.plan-heading h1 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.plan-heading p {
+  color: #858995;
+  font-size: 13px;
+}
+
+/* Statistics */
+
+.plan-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #151923;
+  border: 1px solid #242a35;
+  border-radius: 12px;
+  padding: 25px;
+  margin: 25px 0;
+}
+
+.stat-item {
+  padding-left: 15px;
+  border-right: 1px solid #242a35;
+}
+
+.stat-item:last-child {
+  border: none;
+}
+
+.stat-item p {
+  color: #858995;
+  font-size: 13px;
+}
+
+.stat-item h2 {
+  font-size: 28px;
+  margin-top: 5px;
+}
+
+.stat-item .highlight {
+  color: #c5ff00;
+}
+
+/* Tabs and Sorting */
+
+.plan-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.plan-tabs {
+  display: flex;
+  background: #151923;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.plan-tabs button {
+  background: transparent;
+  color: #858995;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.plan-tabs button.active {
+  background: #252c38;
+  color: white;
+}
+
+.sort-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sort-control label {
+  color: #858995;
+  font-size: 13px;
+}
+
+.sort-control select {
+  background: #151923;
+  color: white;
+  border: 1px solid #292e39;
+  padding: 10px;
+  border-radius: 7px;
+}
+
+/* Empty State */
+
+.empty-state {
+  border: 1px solid #242a35;
+  border-radius: 12px;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.empty-state h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  color: #858995;
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.empty-state button {
+  background: #c5ff00;
+  color: black;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Workout Cards */
+
+.plan-workout-card {
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  background: #151923;
+  border: 1px solid #242a35;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.plan-workout-card img {
+  width: 100px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.workout-info h3 {
+  margin-bottom: 8px;
+}
+
+.workout-info p,
+.workout-info span {
+  color: #858995;
+  font-size: 13px;
+  margin-right: 12px;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .my-plan-container {
+    padding: 18px;
+  }
+
+  .plan-stats {
+    padding: 15px 5px;
+  }
+
+  .stat-item {
+    padding-left: 8px;
+  }
+
+  .stat-item h2 {
+    font-size: 22px;
+  }
+
+  .plan-controls {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+}

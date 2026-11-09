@@ -1,8 +1,13 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import logo from '@/assets/logo.png';
 
 const Navbar = () => {
+  const router = useRouter();
+
   return (
     <div className="navbar bg-[#0b0d10] text-white px-4 md:px-8">
       {/* Left Side */}
@@ -33,21 +38,28 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content bg-[#15171c] rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
             <li>
-              <a className="text-lime-400">Workouts</a>
+              <button
+                onClick={() => router.push('/')}
+                className="text-lime-400"
+              >
+                Workouts
+              </button>
             </li>
 
             <li>
-              <a>My Plan</a>
+              <button onClick={() => router.push('/my-plan')}>My Plan</button>
             </li>
           </ul>
         </div>
 
         {/* Logo */}
-        <a className="btn btn-ghost text-xl font-bold gap-2">
+        <button
+          onClick={() => router.push('/')}
+          className="btn btn-ghost text-xl font-bold gap-2"
+        >
           <Image src={logo} alt="FITLOG Logo" height={22} width={22} />
-
           <span>FITLOG</span>
-        </a>
+        </button>
       </div>
 
       {/* Center Navigation */}
@@ -55,35 +67,48 @@ const Navbar = () => {
         <ul className="menu menu-horizontal gap-2">
           {/* Workouts */}
           <li>
-            <a className="bg-lime-400 text-black rounded-full px-4 py-2 font-medium">
+            <button
+              onClick={() => router.push('/')}
+              className="bg-lime-400 text-black rounded-full px-4 py-2 font-medium"
+            >
               Workouts
-            </a>
+            </button>
           </li>
 
           {/* My Plan */}
           <li>
-            <a className="text-gray-400 hover:text-white">My Plan</a>
+            <button
+              onClick={() => router.push('/my-plan')}
+              className="text-gray-400 hover:text-white"
+            >
+              My Plan
+            </button>
           </li>
         </ul>
       </div>
-
       {/* Right Side */}
       <div className="navbar-end gap-5 text-sm">
         {/* Plan */}
-        <a className="flex items-center gap-1 text-gray-300">
+        <button
+          onClick={() => router.push('/my-plan')}
+          className="flex items-center gap-1 text-gray-300 hover:text-white"
+        >
           Plan
           <span className="flex items-center justify-center w-4 h-4 rounded-full bg-lime-400 text-black text-[10px] font-bold">
             0
           </span>
-        </a>
+        </button>
 
         {/* Saved */}
-        <a className="flex items-center gap-1 text-gray-300">
+        <button
+          onClick={() => router.push('/my-plan')}
+          className="flex items-center gap-1 text-gray-300 hover:text-white"
+        >
           Saved
           <span className="flex items-center justify-center w-4 h-4 rounded-full bg-lime-400 text-black text-[10px] font-bold">
             0
           </span>
-        </a>
+        </button>
       </div>
     </div>
   );
